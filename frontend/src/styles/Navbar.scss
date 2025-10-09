@@ -8,6 +8,56 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   flex-wrap: wrap; // ensures navbar items wrap on smaller screens
 
+  .profile-dropdown {
+  position: relative;
+
+  .profile-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .profile-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+  }
+
+  .dropdown-card {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 130px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    a, button {
+      padding: 10px 15px;
+      text-align: left;
+      font-size: 0.95rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #333;
+
+      &:hover {
+        background: linear-gradient(90deg, #b92b27, #1565C0);
+        color: #fff;
+      }
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+
   .nav-logo {
     font-size: 1.7rem;
     font-weight: bold;

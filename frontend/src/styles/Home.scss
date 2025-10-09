@@ -1,12 +1,13 @@
 .home-container {
   display: flex;
   min-height: 80vh;
+  flex-wrap: wrap; // responsive
 }
 
-/* Sidebar Section */
+/* Sidebar */
 .sidebar {
   width: 220px;
-  background: #f5f5f5; /* keep light neutral background */
+  background: #f5f5f5;
   padding: 20px;
   border-right: 1px solid #1565C0;
 
@@ -21,56 +22,182 @@
       cursor: pointer;
       border-radius: 6px;
       transition: color 0.3s ease;
-      color: #333;
       position: relative;
+      color: #333;
 
-      /* Hover underline animation */
       &::after {
         content: "";
         position: absolute;
         bottom: 4px;
         left: 0;
-        width: 0px;
+        width: 0;
         height: 2px;
         background: linear-gradient(90deg, #1565C0, #b92b27);
         border-radius: 2px;
         transition: width 0.5s ease-in-out;
       }
 
-      &:hover {
-        color: #1565C0;
+      &:hover::after {
+        width: 100%;
       }
 
       &.active {
-        color: #000000;
+        color: #000;
         font-weight: 600;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    border-right: none;
+    display: flex;
+    overflow-x: auto;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      li {
+        flex: 1;
+        text-align: center;
       }
     }
   }
 }
 
-/* Content Section */
+/* Content */
 .content {
   flex: 1;
   padding: 20px;
 
   h2 {
-  position: relative;
-  margin-top: 0;
-  color: #111;
-  font-weight: bold;
-  display: inline-block; /* ✅ needed so underline matches text width */
+    position: relative;
+    margin-top: 0;
+    font-weight: bold;
+    display: inline-block;
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%; /* ✅ underline matches text width */
-    height: 3px;
-    background: linear-gradient(90deg, #1565C0, #b92b27);
-    border-radius: 2px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #1565C0, #b92b27);
+      border-radius: 2px;
+    }
   }
 }
 
+/* Create Post Card */
+.create-post-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 1500px;
+  margin-bottom: 20px;
+
+  textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+
+ .image-upload {
+  background: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #1565C0;
+    background: #f1f1f1;
+  }
+
+  label {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 500;
+    color: #1565C0;
+    margin-bottom: 10px;
+  }
+
+  input[type="file"] {
+    display: none; /* hide default input */
+  }
+
+  .preview-image {
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+}
+
+
+  .tags-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    select {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+    }
+
+    .tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .tag {
+        background: #e0e0e0;
+        padding: 4px 8px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+
+        button {
+          border: none;
+          background: transparent;
+          margin-left: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .post-btn {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #1565C0, #b92b27);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .create-post-card {
+    margin: 20px 0;
+    width: 100%;
+  }
 }

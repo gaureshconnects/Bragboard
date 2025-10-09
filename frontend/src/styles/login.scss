@@ -3,7 +3,7 @@
   margin: 30px auto;
   padding: 30px 25px;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #ffffff26;
   background-size: cover;       /* cover entire container */
   background-position: center;  /* center the image */
   background-repeat: no-repeat; /* prevent tiling */
@@ -23,11 +23,15 @@
   input[type="email"],
   input[type="password"] {
     width: 100%;
-    padding: 12px;
+    padding: 12px 15px;
     margin-bottom: 15px;
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
   }
 
   .role-selection {
