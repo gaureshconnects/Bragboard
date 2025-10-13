@@ -1,0 +1,78 @@
+.login-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 30px 25px;
+  border-radius: 8px;
+  background-color: #fff;
+  background-size: cover;       /* cover entire container */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat; /* prevent tiling */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h1 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+
+  /* Gradient text */
+  background: linear-gradient(90deg, #b92b27, #1565C0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .role-selection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+
+    button {
+      flex: 1;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: 1px solid #b92b27;
+      background-color: #fff;
+      color: #000000;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &.active {
+        background-color: #b92b27;
+        color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.238);
+      }
+
+      &:hover:not(.active) {
+        background-color: #1565C0;
+      }
+    }
+  }
+
+  button.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #b92b27, #1565C0);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: linear-gradient(90deg, #b92b27, #1565C0);
+    }
+  }
+}
