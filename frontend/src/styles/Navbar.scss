@@ -1,0 +1,255 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e3e3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+
+    .logo-img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #222;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+      &:hover {
+        color: #007bff;
+      }
+    }
+
+    .notif-dropdown,
+    .profile-dropdown {
+      position: relative;
+    }
+
+    .notif-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: 0.2s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      svg {
+        font-size: 1.3rem;
+        color: #333;
+      }
+    }
+
+    .notif-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: #b40000;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 🔔 Notification Card */
+    .notif-card {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: #ffffffee;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      padding: 12px;
+      animation: fadeIn 0.2s ease;
+      backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      max-height: 300px;
+      overflow-y: auto;
+
+      scrollbar-width: thin;
+      scrollbar-color: #c5c5c5 #ffffff10;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #c1c1c1;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: #999;
+      }
+
+      h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        color: #333;
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .notif-item {
+        padding: 6px 0;
+        border-bottom: 1px solid #f3f3f3;
+
+        &:hover {
+          background: rgba(240, 240, 240, 0.6);
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: #333;
+        }
+
+        .notif-time {
+          font-size: 0.75rem;
+          color: #777;
+        }
+      }
+    }
+
+    /* 👤 Profile Button + Dropdown */
+    .profile-dropdown {
+      position: relative;
+
+      .profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #e6ffed; /* light green background */
+  border: 1px solid #9be7c4; /* subtle green border */
+  color: #0b3d0b; /* dark green text */
+  font-weight: 600;
+  border-radius: 999px; /* pill shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.4rem 1rem;
+
+  .username-display {
+    font-size: 0.95rem;
+    text-transform: capitalize;
+  }
+
+  .dropdown-icon {
+    font-size: 0.8rem;
+    color: #0b3d0b;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: #d0f5de;
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(0, 200, 100, 0.2);
+  }
+
+  &.active .dropdown-icon,
+  .dropdown-icon.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+
+      .dropdown-card {
+        position: absolute;
+        top: 42px;
+        right: 0;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 160px;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 25s ease-in-out;
+        z-index: 10;
+
+        a,
+        button {
+          background: none;
+          border: none;
+          text-align: left;
+          padding: 10px 14px;
+          font-size: 0.95rem;
+          color: #333;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            background: #f7f7f7;
+            color: #007bff;
+          }
+        }
+      }
+
+      &.open .dropdown-card {
+        opacity: 1;
+        visibility: visible;
+
+      }
+    }
+  }
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+
+    .nav-links {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+}

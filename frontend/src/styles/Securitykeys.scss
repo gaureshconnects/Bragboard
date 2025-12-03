@@ -1,0 +1,167 @@
+.dashboard-container {
+  min-height: 100vh;
+  color: #e6f1f5;
+  padding: 2.5rem 3rem;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease-in-out;
+
+  background: #0B486B;  /* fallback for old browsers */
+  background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    color: #000000;
+    letter-spacing: 0.6px;
+    text-shadow: 0 0 10px rgba(0, 230, 184, 0.5);
+  }
+
+  .security-key-section {
+    background: #fff;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.6s ease-in-out;
+    max-width: 900px;
+    margin: 0 auto;
+
+    /* ===== Primary Button ===== */
+    button {
+      background: linear-gradient(135deg, #1e3c72, #2a5298); /* Deep blue professional tone */
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(30, 60, 114, 0.4);
+
+      &:hover {
+        background: linear-gradient(135deg, #0f52ba, #00a0ff);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 160, 255, 0.6);
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1rem;
+        color: #000000;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-3px);
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .status {
+          font-weight: 600;
+          padding: 0.3rem 0.8rem;
+          border-radius: 20px;
+          font-size: 0.85rem;
+
+          &.available {
+            background-color: rgba(0, 255, 102, 0.1);
+            color: #026d26;
+            border: 1px solid rgba(0, 255, 102, 0.3);
+          }
+
+          &.used {
+            background-color: rgba(255, 77, 77, 0.15);
+            color: #910000;
+            border: 1px solid rgba(255, 99, 99, 0.4);
+          }
+        }
+
+        /* ===== Delete Button ===== */
+        .copy-key-btn{
+          float: right;
+          padding: 0.5rem 1.1rem;
+          font-size: 0.8rem;
+          border-radius: 6px;
+          background: linear-gradient(135deg, #1e3c72, #2a5298);
+          border: none;
+          color: #fff;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 14px rgba(0, 115, 230, 0.4);
+
+          &:hover {
+            background: linear-gradient(135deg, #0073e6, #00a0ff);
+            transform: scale(1.08);
+            box-shadow: 0 0 18px rgba(0, 160, 255, 0.6);
+          }
+
+          &:active {
+            transform: scale(0.96);
+          }
+        }
+
+        .delete-key-btn {
+          margin-left: -15rem;
+          padding: 0.5rem 1.1rem;
+          font-size: 0.9rem;
+          border-radius: 6px;
+          background: linear-gradient(135deg, #8a0000, #d72638);
+          border: none;
+          color: #fff;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 14px rgba(215, 38, 56, 0.4);
+
+          &:hover {
+            background: linear-gradient(135deg, #d72638, #ff0033);
+            transform: scale(1.08);
+            box-shadow: 0 0 18px rgba(255, 0, 51, 0.6);
+          }
+
+          &:active {
+            transform: scale(0.96);
+          }
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.9;
+      color: #cfdde4;
+    }
+  }
+}
+
+/* ✨ Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

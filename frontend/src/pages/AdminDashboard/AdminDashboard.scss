@@ -1,0 +1,691 @@
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
+  background: linear-gradient(to bottom right, #f4f6f9, #e9ecf1);
+  transition: all 0.3s ease;
+
+  /* ---------- HEADER ---------- */
+  .dashboard-header {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px 24px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    .user-badge {
+      background: #f3f4f6;
+      color: #1e40af;
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  /* ---------- CARD GRID SECTION ---------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .dashboard-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    i {
+      font-size: 1.8rem;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 12px;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #374151;
+    }
+
+    p {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0;
+    }
+
+    &:nth-child(1) {
+      /* Total Shoutouts card blue highlight */
+      background: linear-gradient(135deg, #ede9fe, #f5d0fe);
+      border: 1px solid #c084fc;
+
+      i {
+        background: #a855f7;
+        color: #fff;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      h3,
+      p {
+        color: #581c87;
+      }
+
+      &:hover {
+        box-shadow: 0 6px 20px rgba(168, 85, 247, 0.3);
+        transform: translateY(-4px);
+      }
+    }
+
+    &:nth-child(2) {
+      /* Employee of Month card gold highlight */
+      background: linear-gradient(135deg, #e0f2fe, #93c5fd);
+      border: 1px solid #60a5fa;
+
+      i {
+        background: #3b82f6;
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      h3,
+      p {
+        color: #1e3a8a;
+      }
+
+      &:hover {
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        transform: translateY(-4px);
+      }
+    }
+
+    &:nth-child(3) {
+      /* Employee of Month card gold highlight */
+      background: linear-gradient(135deg, #dcfce7, #86efac);
+      border: 1px solid #4ade80;
+
+      i {
+        background: #22c55e;
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 6px;
+      }
+
+      h3,
+      p {
+        color: #14532d;
+      }
+
+      &:hover {
+        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35);
+        transform: translateY(-4px);
+      }
+    }
+
+    &:nth-child(4) {
+      /* Employee of Month card gold highlight */
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 1px solid #fcd34d;
+      i {
+        background: #facc15;
+        color: #78350f;
+      }
+      h3,
+      p {
+        color: #78350f;
+      }
+      &:hover {
+        box-shadow: 0 6px 20px rgba(251, 191, 36, 0.3);
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+
+    .contributor-item {
+      flex-direction: column;
+      align-items: flex-start;
+      .rank {
+        margin-bottom: 4px;
+      }
+      .count {
+        margin-top: 4px;
+      }
+    }
+  }
+  .mini-list {
+  list-style: none; /* ✅ Remove default dots */
+  padding: 1rem;
+  margin: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e8f9f0, #bbf7d0);
+  border: 1px solid #4ade80;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.25);
+    transform: translateY(-3px);
+  }
+
+  .contributor-item {
+    list-style: none; /* ✅ No bullets for inner items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    padding: 0.8rem 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.6);
+      transform: scale(1.03);
+    }
+
+    .rank {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #16a34a;
+      margin-bottom: 0.2rem;
+    }
+
+    .name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #065f46;
+      margin-bottom: 0.15rem;
+      letter-spacing: 0.3px;
+      text-transform: capitalize;
+    }
+
+    .count {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #15803d;
+    }
+  }
+}
+
+
+
+  /* ---------- SHOUTOUT MODERATION ---------- */
+  .moderation-section {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      .dept-dropdown {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        background: #f9fafb;
+        transition: 0.2s ease;
+
+        &:focus {
+          outline: none;
+          border-color: #2563eb;
+          box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+        }
+      }
+    }
+
+    /* Status colors */
+    .reported {
+      color: #d9534f; /* 🔴 red for reported */
+      font-weight: 600;
+    }
+
+    .clean {
+      color: #28a745; /* 🟢 green for clean */
+      font-weight: 600;
+    }
+
+    .icon-ok {
+      color: green;
+    }
+
+    .shoutout-list {
+      display: grid;
+      gap: 15px;
+
+      .shoutout-card {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 16px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          background: #f3f4f6;
+        }
+
+        p {
+          margin: 0;
+          color: #111827;
+        }
+
+        .msg {
+          margin: 6px 0;
+          font-style: italic;
+          color: #374151;
+        }
+
+        small {
+          color: #6b7280;
+          font-size: 0.8rem;
+        }
+
+        .delete-btn {
+          margin-top: 8px;
+          background: #ef4444;
+          color: #fff;
+          border: none;
+          padding: 6px 10px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 0.85rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+
+  /* ---------- EMPLOYEE OF THE MONTH SECTION ---------- */
+  .employee-month-section {
+    background: linear-gradient(135deg, #fffbe6, #fff3c4);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
+    border: 1px solid #fcd34d;
+    transition: all 0.3s ease;
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #78350f;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .current-eom {
+      background: #fff8dc;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #fde68a;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(251, 191, 36, 0.2);
+
+      p {
+        margin: 0;
+        font-weight: 600;
+        color: #78350f;
+      }
+
+      small {
+        color: #92400e;
+        font-size: 0.8rem;
+      }
+    }
+
+    hr {
+      margin: 12px 0;
+      border: none;
+      border-top: 1px solid #fcd34d;
+    }
+
+    .eom-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      select {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 8px;
+        font-size: 0.9rem;
+        background: #fff;
+        transition: 0.3s ease;
+
+        &:focus {
+          border-color: #fbbf24;
+          box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.3);
+        }
+      }
+
+      button {
+        background: linear-gradient(90deg, #1e3c72, #2a5298);
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 0.9;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .moderation-section {
+    .shoutout-table {
+      margin-top: 10px;
+
+      .gridjs-container {
+        background: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        overflow-x: auto;
+      }
+
+      .gridjs-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .gridjs-th {
+        background: #f9fafb;
+        font-weight: 600;
+        color: #1f2937;
+        border-bottom: 2px solid #e5e7eb;
+      }
+
+      .gridjs-td {
+        padding: 10px;
+        color: #374151;
+        font-size: 0.9rem;
+
+        &:nth-child(4) {
+          font-weight: 600;
+
+          /* Color-coded Report Status */
+          &.gridjs-td:has(> span:contains("🚩")) {
+            color: #b91c1c;
+          }
+          &.gridjs-td:has(> span:contains("✅")) {
+            color: #059669;
+          }
+        }
+      }
+
+      .btn-delete {
+        background: #ef4444;
+        color: #fff;
+        padding: 6px 10px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 0.9;
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+
+  /* ---------- NOTIFICATIONS SECTION ---------- */
+  .notifications-section {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1e3a8a;
+    }
+
+    textarea {
+      width: 98%;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 0.95rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+      }
+    }
+
+    button {
+      margin-top: 10px;
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+    }
+
+    .notification-list {
+      margin-top: 20px;
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #1f2937;
+      }
+
+      .notif-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin-bottom: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+
+        span {
+          font-size: 0.9rem;
+          color: #374151;
+        }
+
+        small {
+          font-size: 0.8rem;
+          color: #6b7280;
+        }
+      }
+    }
+  }
+
+  /* ---------- RESPONSIVE DESIGN ---------- */
+  @media (max-width: 1024px) {
+    .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .moderation-section,
+    .employee-month-section,
+    .notifications-section {
+      padding: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dashboard-card {
+      padding: 18px 12px;
+
+      i {
+        font-size: 1.4rem;
+      }
+
+      h3 {
+        font-size: 0.9rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+
+  th {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr:hover {
+    background: #f9f9f9;
+  }
+
+  .btn-delete {
+    background: #e63946;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  .btn-delete:hover {
+    background: #c1121f;
+  }
+}
+
+td:nth-child(5) {
+  font-weight: bold;
+  color: #e63946;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 1.1rem;
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, #2a5298, #1e3c72);
+    transform: scale(1.05);
+  }
+}

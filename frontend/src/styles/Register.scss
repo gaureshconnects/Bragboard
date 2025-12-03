@@ -1,0 +1,211 @@
+// 🌈 Global Styles
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  
+}
+
+// 💳 Register Card Container
+.register-card {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 1000px;
+  max-width: 95%;
+  animation: fadeIn 0.6s ease;
+  transition: all 0.3s ease-in-out;
+}
+
+// 🖼️ Left Side Image Section
+.register-image {
+  flex: 1;
+  background: #f6f8fa;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+// 🧾 Right Side Form Section
+.register-form {
+  flex: 1.2;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 0px;
+    font-weight: 700;
+  }
+
+  p {
+    color: #6c757d;
+    margin-bottom: 10px;
+  }
+
+  // 🧩 Input Rows
+  .input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+
+    input,
+    select,
+    textarea {
+      flex: 1;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.2s ease-in;
+
+      &:focus {
+        border-color: linear-gradient(90deg, #2ecc71, #3498db);
+        box-shadow: 0 0 5px rgba(75, 108, 183, 0.3);
+        outline: none;
+      }
+    }
+
+    textarea {
+      resize: none;
+      min-height: 80px;
+    }
+  }
+
+  // 🎭 Role Selection Buttons
+  .role-selection {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+
+    button {
+      flex: 1;
+      padding: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #f8f9fa;
+      color: #333;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(90deg, #2ecc71, #3498db);
+        color: #fff;
+      }
+
+      &.active {
+        background: linear-gradient(90deg, #2ecc71, #3498db);
+        color: #fff;
+        border-color: #ffffff;
+      }
+    }
+  }
+
+  // 🔘 Submit Button
+  .submit-btn {
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(90deg, #27ae60, #2980b9);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(75, 108, 183, 0.3);
+    }
+  }
+
+  // 🔗 Register / Login link
+  .register-text {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+
+    a {
+      color: #4b6cb7;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #182848;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// 📱 Responsive Design
+@media (max-width: 768px) {
+  .register-card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .register-image {
+    display: none;
+  }
+
+  .register-form {
+    padding: 30px;
+  }
+
+  .input-row {
+    flex-direction: column; // Stack vertically on mobile
+  }
+}
+
+// ✨ Animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+select {
+  padding: 12px 14px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+  background: #fff;
+  color: #333;
+  transition: all 0.2s ease-in;
+
+  &:focus {
+    border-color: #4b6cb7;
+    box-shadow: 0 0 5px rgba(75, 108, 183, 0.3);
+    outline: none;
+  }
+}
